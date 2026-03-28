@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+:root {
+  --void: #020408;
+  --deep: #060d1a;
+  --nebula: #0a1628;
+  --surface: #0e1e35;
+  --surface-2: #132540;
+  --border: rgba(100, 180, 255, 0.12);
+  --border-bright: rgba(100, 180, 255, 0.3);
+  --star: #e8f4ff;
+  --star-dim: #8ab4d4;
+  --accent: #4fa3e8;
+  --accent-glow: rgba(79, 163, 232, 0.4);
+  --gold: #f5c842;
+  --gold-dim: rgba(245, 200, 66, 0.15);
+  --danger: #ff6b6b;
+  --text: #cce0f5;
+  --text-dim: #6a9ab8;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--void);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+#__next {
+  height: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 2px;
+}
+
+/* Markdown styles inside messages */
+.msg-content h1, .msg-content h2, .msg-content h3 {
+  font-family: var(--font-display);
+  color: var(--star);
+  margin: 0.6em 0 0.3em;
+}
+.msg-content p { margin: 0.4em 0; line-height: 1.7; }
+.msg-content strong { color: var(--accent); font-weight: 600; }
+.msg-content em { color: var(--gold); font-style: italic; }
+.msg-content ul, .msg-content ol { padding-left: 1.2em; margin: 0.4em 0; }
+.msg-content li { margin: 0.2em 0; line-height: 1.6; }
+.msg-content code {
+  font-family: var(--font-mono);
+  background: rgba(79,163,232,0.1);
+  border: 1px solid var(--border);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+.msg-content pre {
+  background: var(--deep);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 0.6em 0;
+}
+.msg-content blockquote {
+  border-left: 3px solid var(--gold);
+  padding-left: 1em;
+  color: var(--text-dim);
+  font-style: italic;
+  margin: 0.6em 0;
+}
