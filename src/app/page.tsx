@@ -18,20 +18,46 @@ const SUGGESTIONS = [
 ]
 
 function StarField() {
+  const [stars, setStars] = useState<Array<{
+    left: number
+    top: number
+    width: number
+    height: number
+    delay: number
+    duration: number
+    opacity: number
+  }> | null>(null)
+
+  useEffect(() => {
+    setStars(
+      Array.from({ length: 120 }).map(() => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        width: Math.random() * 2 + 0.5,
+        height: Math.random() * 2 + 0.5,
+        delay: Math.random() * 4,
+        duration: Math.random() * 3 + 2,
+        opacity: Math.random() * 0.7 + 0.2,
+      }))
+    )
+  }, [])
+
+  if (!stars) return <div className={styles.starfield} aria-hidden="true" />
+
   return (
     <div className={styles.starfield} aria-hidden="true">
-      {Array.from({ length: 120 }).map((_, i) => (
+      {stars.map((star, i) => (
         <div
           key={i}
           className={styles.star}
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: `${Math.random() * 2 + 0.5}px`,
-            height: `${Math.random() * 2 + 0.5}px`,
-            animationDelay: `${Math.random() * 4}s`,
-            animationDuration: `${Math.random() * 3 + 2}s`,
-            opacity: Math.random() * 0.7 + 0.2,
+            left: `${star.left}%`,
+            top: `${star.top}%`,
+            width: `${star.width}px`,
+            height: `${star.height}px`,
+            animationDelay: `${star.delay}s`,
+            animationDuration: `${star.duration}s`,
+            opacity: star.opacity,
           }}
         />
       ))}

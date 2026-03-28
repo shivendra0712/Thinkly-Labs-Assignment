@@ -29,11 +29,11 @@ export async function POST(req: NextRequest) {
 
     const chat = ai.chats.create({
       model: 'gemini-2.0-flash',
-      systemInstruction: SYSTEM_PROMPT,
       history,
     })
 
-    const response = await chat.sendMessage({ message: lastMessage })
+    const systemPromptMessage = `System: ${SYSTEM_PROMPT}\n\nUser: ${lastMessage}`
+    const response = await chat.sendMessage({ message: systemPromptMessage })
     const text = response.text || ''
 
     return NextResponse.json({ message: text })
