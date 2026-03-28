@@ -1,16 +1,11 @@
-# 🪐 ORION — Space & Astronomy AI Chatbot
+# AI Chatbot
 
-A purpose-built AI chatbot for space exploration and astronomy, powered by Claude AI.
+A purpose-built AI chatbot for chatting, powered by Google Gemini.
 
-## 🚀 What I Built
 
-**ORION** is an AI guide to the cosmos. Ask it anything about black holes, exoplanets, space missions, dark matter, the Big Bang — it answers with depth, enthusiasm, and genuine cosmic wonder.
+##  Features
 
-**Why Space?** Space is the most universally fascinating topic — endlessly deep, visually stunning, and full of mind-bending concepts that benefit from a conversational explainer.
-
-## ✨ Features
-
-- **AI-powered conversations** via Claude API (claude-opus-4-5)
+- **AI-powered conversations** via Google Gemini API (gemini-2.0-flash)
 - **Cosmic UI** — animated starfield, nebula glows, floating orbs
 - **Smart suggestions** — pre-loaded questions to spark curiosity
 - **Loading / Error / Empty states** all thoughtfully designed
@@ -18,32 +13,16 @@ A purpose-built AI chatbot for space exploration and astronomy, powered by Claud
 - **Responsive** — works on mobile and desktop
 - **Keyboard shortcuts** — Enter to send, Shift+Enter for new line
 
-## 🛠 Tech Stack
+## Tech Stack
 
-- **Next.js 14** (App Router)
+- **Next.js 16** (App Router, Turbopack)
 - **TypeScript**
-- **Claude API** (Anthropic)
+- **Google Gemini API** (gemini-2.0-flash)
 - **CSS Modules** with custom space design system
 - **Deployed on Vercel**
 
-## 🔧 Setup
 
-```bash
-npm install
-```
-
-Create `.env.local`:
-```
-ANTHROPIC_API_KEY=your_key_here
-```
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## 🌌 Design Decisions
+## Design Decisions
 
 - Dark void background with procedurally placed stars (no images needed)
 - Nebula glow blobs give depth without being distracting
